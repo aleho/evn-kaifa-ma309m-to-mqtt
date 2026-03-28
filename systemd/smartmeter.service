@@ -1,0 +1,26 @@
+[Unit]
+Description=SmartMeter MQTT
+After=network-online.target
+Requires=network-online.target
+Requires=docker.service
+
+[Service]
+Type=notify
+ExecStart={{ smartmeter_dir }}/venv/bin/python {{ smartmeter_dir }}/src/smartmeter.py
+
+Environment=PYTHONUNBUFFERED=true
+Environment=KEY={{ smartmeter_key }}
+Environment=MQTT=1
+Environment=MQTT_HOST={{ smartmeter_mqtt_host }}
+Environment=MQTT_USER={{ smartmeter_mqtt_user }}
+Environment=MQTT_PASS={{ smartmeter_mqtt_pass }}
+
+Restart=always
+RestartSec=20
+WatchdogSec=180
+
+User=alex
+Group=alex
+
+[Install]
+WantedBy=multi-user.target
