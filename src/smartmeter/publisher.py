@@ -24,7 +24,7 @@ class Publisher:
 
         self.client.publish("smartmeter/voltage/L1", data["voltage/L1"])
         self.client.publish("smartmeter/voltage/L2", data["voltage/L2"])
-        self.client.publish("smartmeter/voltate/L3", data["voltage/L3"])
+        self.client.publish("smartmeter/voltage/L3", data["voltage/L3"])
         self.client.publish("smartmeter/current/L1", data["current/L1"])
         self.client.publish("smartmeter/current/L2", data["current/L2"])
         self.client.publish("smartmeter/current/L3", data["current/L3"])

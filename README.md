@@ -17,7 +17,7 @@ Der Code läuft seit mehreren Jahren fehlerfrei gemeinsam mit Home Assistant.
 - `smartmeter/power`: Momentanleistung
 - `smartmeter/voltage/L1`: Spannung L1
 - `smartmeter/voltage/L2`: Spannung L2
-- `smartmeter/voltate/L3`: Spannung L3
+- `smartmeter/voltage/L3`: Spannung L3
 - `smartmeter/current/L1`: Strom L1
 - `smartmeter/current/L2`: Strom L2
 - `smartmeter/current/L3`: Strom L3
@@ -103,7 +103,7 @@ sensor:
     state_class: measurement
     unit_of_measurement: V
 
-  - state_topic: "smartmeter/voltate/L3"
+  - state_topic: "smartmeter/voltage/L3"
     name: SmartMeter V L3
     device_class: voltage
     state_class: measurement
